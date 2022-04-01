@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="/icon.png" />
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Bootbank</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,14 +116,14 @@
               <h2 class="title-2">Any questions? Contact us!</h2>
               <form class="form form-message">
                   <div>
-                      <input type="text" class="form-input form-input-message" />
+                      <input type="text" class="form-input form-input-message" id="bot-message" />
                       <label class="form-label">Enter message</label>
                   </div>
                   <div>
-                      <input type="email"class="form-input form-input-email"/>
+                      <input type="email"class="form-input form-input-email" id="bot-email"/>
                       <label class="form-label">Enter email</label>
                   </div>
-                  <div> <button id="message-btn"class="btn-form">&rarr;</button></div>
+                  <div> <button type="button" id="bot-btn"class="btn-form">&rarr;</button></div>
               </form>
           </div>
       </section>
@@ -163,6 +163,6 @@
     
     </div>
   </main>
-    <script src="script.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
