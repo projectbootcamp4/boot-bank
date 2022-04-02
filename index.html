@@ -28,6 +28,7 @@
 
     <!--Main page-->
   <main class="app">
+      
     <div class="wrapper">
         <!-- Column 01 - Balance, Transactions and Summary-->
       <section id="column-1">
@@ -76,23 +77,27 @@
           <div class="operation operation-transfer">
               <h2 class="title-2">Transfer money</h2>
               <form class="form form-transfer">
-
-              <div>
+               <!--Enter username-->
+              <div class="transfer-to">
                   <input type="text" class="form-input form-input-to">
                   <label class="form-label">Transfer to</label>
               </div>
-
-              <div>
-                  <input type="number" class="form-input form-input-amount" />
-                  <label class="form-label">Amount</label>
-              </div>
-
-              <div>
-              <input type="number" class="form-input form-input-convert" />
-              <label class="form-label">Convert</label>
-              </div>
-              <div>
-              <button id="transfer-btn"class="btn-form btn-transfer">&rarr;</button>
+               <!--Currency conveter-->
+              <div class="transfer-options">
+                    <div class="left_box">
+                        <select name="currency" class="currency"></select>
+                        <input type="number" name="" id="num" class="form-input">
+                        <label class="form-label">Amount</label>
+                    </div>
+                    <div class="right_box">
+                        <select name="currency" class="currency"></select>
+                        <input type="text" name="" id="ans" class="form-input" >
+                        <label class="form-label">Currency</label>
+                    </div> 
+                    <!--Button - Convert-->
+                    <button class="btn-convert" id="btn-convert">Convert</button>
+                    <!--Button Transfer-->
+                    <button id="btn-transfer"class="btn-form btn-transfer">&rarr;</button>
               </div>
               </form>
           </div>
@@ -105,17 +110,16 @@
                       <input type="number" class="form-input form-input-loan-amount" />
                       <label class="form-label form-label-loan">Amount</label>
                   </div>
-                  <div>
                       <button id="loan-btn" class="btn-form form-btn-loan">&rarr;</button>
-                  </div>
               </form>
+             
           </div>
 
           <!-- Contact us  -->
           <div class="operation operation-close">
               <h2 class="title-2">Any questions? Contact us!</h2>
               <form class="form form-message">
-                  <div>
+                  <!--<div>
                       <input type="text" class="form-input form-input-message" />
                       <label class="form-label">Enter message</label>
                   </div>
@@ -123,8 +127,9 @@
                       <input type="email"class="form-input form-input-email"/>
                       <label class="form-label">Enter email</label>
                   </div>
-                  <div> <button id="message-btn"class="btn-form">&rarr;</button></div>
-              </form>
+                   </form>
+                -->
+                  <button id="btn-message"class="btn-form">&rarr;</button>
           </div>
       </section>
     
@@ -162,7 +167,8 @@
       </section>
     
     </div>
+
   </main>
-    <script src="script.js"></script>
+    <script src="./assets/js/curr.js"></script>
   </body>
 </html>

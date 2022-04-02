@@ -49,6 +49,24 @@
     cursor: pointer;
   }
 
+  .btn-convert{
+    padding: 6px 4px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-convert:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  #btn-message{
+    width: 50%;
+    margin: 0 auto;
+  }
+
   .btn-contacts {
     background-color: DodgerBlue; 
     border: none; 
@@ -80,6 +98,7 @@
 
   .title-2 {
     margin-bottom: 1.5rem;
+    text-align: center;
     font-size: 1.7rem;
     font-weight: 600;
     color: #333;
@@ -274,22 +293,67 @@ nav {
   
   .form {
     display: grid;
-    grid-template-columns: 1fr 1fr 0.5fr;
-    grid-template-rows: auto auto;
     gap: 0.4rem 1rem;
     text-align: center;
   }
   
-  .form.form-loan {
-    grid-template-columns: 2.3fr 1fr 2.5fr;
-  }
-  .form-label-loan {
-    grid-row: 2;
-  }
+.form-loan {
+    grid-template-columns: 1fr;
+    width: 50%;
+    margin: 0 auto;
+}
+
+
  
+ 
+  /*Transfer styles*/
+
+.operation-transfer h2{
+  text-align: center;
+}
+
+.transfer-to{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.transfer-options{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
 .form-transfer{
   display: grid;
-  grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
+  grid-template-columns: 1fr;
+}
+
+/*curreny styles*/
+
+.transfer-options select{
+  width: 95%;
+  height: 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  background: #fdfdfd;
+  outline: none;
+  color: black;
+  margin: 0.2em 0;
+  padding: 0 1em;
+  border-radius: 10px;
+  border: none;
+}
+
+
+.transfer-options input{
+  width: 95%;
+  height: 20px;
+  font-size: 1em;
+  margin: 0.2em 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 0 1em;
 }
 
 .form-input {
@@ -303,6 +367,7 @@ nav {
     padding: 0.3rem 0.4rem;
     border-radius: 0.7rem;
     transition: all 0.3s;
+    height: 25px;
 }
   
 .form-input:focus {
@@ -389,3 +454,8 @@ nav {
   flex-direction: column;
   padding: 0.5rem;
 }
+
+
+
+
+
