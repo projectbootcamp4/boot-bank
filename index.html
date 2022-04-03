@@ -116,14 +116,16 @@
               <h2 class="title-2">Any questions? Contact us!</h2>
               <form class="form form-message">
                   <div>
-                      <input type="text" class="form-input form-input-message" id="bot-message" />
+                      <input type="text" class="form-input form-input-message" id="bot-message"/>
                       <label class="form-label">Enter message</label>
                   </div>
                   <div>
                       <input type="email"class="form-input form-input-email" id="bot-email"/>
                       <label class="form-label">Enter email</label>
+                      
                   </div>
                   <div> <button type="button" id="bot-btn"class="btn-form">&rarr;</button></div>
+                  <div id="bot-status" style="font-size:20px"></div>
               </form>
           </div>
       </section>
@@ -136,7 +138,7 @@
                   <h2 class="title-2">Search contact</h2>
                   <form class="search-form">
                       <input type="search"  id="search-username" class="input-contact" placeholder="enter username">
-                      <button type="submit" id="search-user-btn" class="btn-contacts"><i class="fa-solid fa-magnifying-glass"></i></button>
+                      <button type="submit" id="search-user-btn" class="btn-contacts"><i class="fa-solid fa-magnifying-glass" ></i></button>
                   </form>
               </div>
 
@@ -151,7 +153,7 @@
           <div id="new-contact">
               <h2 class="title-2">New contact</h2>
               <form  class="search-form">
-                  <input type="search"  id="new-username" class="input-contact" placeholder="enter username">
+                  <input type="search"  id="new-username" class="input-contact" placeholder="enter username" >
                   <button type="submit" id="store-user-btn" class="btn-contacts">Add</button>
               </form>
           </div>
