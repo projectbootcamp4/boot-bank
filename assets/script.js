@@ -57,6 +57,7 @@ btnDeposit.addEventListener('click', function()  {
     
 });
 
+/*
 // accept withdrawals from user, store withdrawals in array
 btnWithdraw.addEventListener('click', function() {
 
@@ -91,7 +92,7 @@ btnWithdraw.addEventListener('click', function() {
     }
 }
 });
-
+*/
 // format TotalBalance to show $ XX.XX (2 decimal places)
 
 var totalBalanceFormatted = formatter.format(totalBalance);
