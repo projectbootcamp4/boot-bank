@@ -3,7 +3,7 @@
 }
 body{
     margin: 0;
-    background: url("assets\images\background-image.jpg");
+    background: url("../images/background-image.jpg");
 }
 #overlay {
     width: 100%;
