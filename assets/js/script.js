@@ -1,4 +1,5 @@
 botButton = document.getElementById("bot-btn").addEventListener("click", getToken);
+botStatus = document.getElementById("bot-status")
 /* TODO: ADD VALIDATION AND RESPECTIVE ALERT FOR MESSAGE BOX */
 
 function getToken() {
@@ -12,13 +13,12 @@ var email = document.getElementById("bot-email").value
 
 /* the variable that is being declared states that an email should be: letters or numbers + @ + numbers or letters + . + number or leters */
 var valid = /\S+@\S+\.\S+/;
-if (valid.test(email) === false) {
-  alert("Invalid Email")
+if (valid.test(email) === false || input === "") {
+  botStatus.innerHTML = "Invalid Email or Password";
   return false
-  
-} else if (input === "") {
-  alert("Message Required")
-  return false
+
+} else if (input != "" && valid.test(email) === true) {
+  botStatus.innerHTML = "";
 }
 
 
