@@ -146,7 +146,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/images/Bootbank-logo.jpeg">
     <script src="https://kit.fontawesome.com/2d9e8320eb.js" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body>  
     <!-- Navbar -->
     <nav>
       <p class="welcome">Welcome, <span class="welcome-user"></span></p>
@@ -155,12 +155,13 @@
 
        <!-- logout timer -->
        <p class="logout-timer">
-        You will be logged out in <span class="timer">10:00</span>
+        You will be logged out in <span id="countdown"></span>
       </p>
     </nav>
 
     <!--Main page-->
   <main class="app">
+      
     <div class="wrapper">
         <!-- Column 01 - Balance, Transactions and Summary-->
       <section id="column-1">
@@ -168,7 +169,7 @@
           <div>
             <p class="balance-label">Current balance</p>
             <p class="balance-date">
-              As of <span class="date"></span>
+              As of <span class="currentDate"></span>
             </p>
           </div>
           <p class="balance-value">1000 CAD</p>
@@ -197,66 +198,84 @@
           <p class="summary-value summary-value-in">0000 CAD</p>
           <p class="summary-label">Out</p>
           <p class="summary-value summary-value-out">0000 CAD</p>
-          <p class="summary-label">Interest</p>
-          <p class="summary-value summary-value-interest">0000 CAD</p>
-          <button class="btn-sort">&downarrow; SORT</button>
+          <!--<p class="summary-label">Interest</p>
+          <p class="summary-value summary-value-interest">0000 CAD</p> 
+          <button class="btn-sort">&downarrow; SORT</button> -->
         </div>
       </section>
 
       <!--Column 02 operations and contact us-->
       <section id="column-2">
         <!-- OPERATION: TRANSFERS - -->
-          <div class="operation operation-transfer">
-              <h2 class="title-2">Transfer money</h2>
+          <div class="operation operation-transfer boxes">
+              <h2 class="boxes-title">Transfer money</h2>
               <form class="form form-transfer">
-
-              <div>
+               <!--Enter username-->
+              <div class="transfer-to">
                   <input type="text" class="form-input form-input-to">
                   <label class="form-label">Transfer to</label>
               </div>
-
               <div>
-                  <input type="number" class="form-input form-input-amount" />
+                  <input type="number"  class="form-input form-input-amount">
                   <label class="form-label">Amount</label>
               </div>
-
               <div>
-              <input type="number" class="form-input form-input-convert" />
-              <label class="form-label">Convert</label>
-              </div>
-              <div>
-              <button id="transfer-btn"class="btn-form btn-transfer">&rarr;</button>
+                <button id="btn-transfer"class="btn-form btn-transfer">&rarr;</button>
               </div>
               </form>
           </div>
-
-          <!-- OPERATION: LOAN -->
-          <div class="operation operation-loan">
-              <h2 class="title-2">Request loan</h2>
-              <form class="form form-loan">
-                  <div>
-                      <input type="number" class="form-input form-input-loan-amount" />
-                      <label class="form-label form-label-loan">Amount</label>
-                  </div>
-                  <div>
-                      <button id="loan-btn" class="btn-form form-btn-loan">&rarr;</button>
-                  </div>
+         <!--Currency Converter-->
+          <div class="boxes">
+            <div class="currency-box">
+              <h2 class="boxes-title"> Currency Converter</h2>
+              <form class="currency-options">
+                <div class="left_box">
+                  <select name="currency" class="currency"></select>
+                  <input type="number" name="" id="num" class="form-input">
+                  <label class="form-label">Amount</label>
+              </div>
+              <div class="right_box">
+                  <select name="currency" class="currency"></select>
+                  <input type="text" name="" id="ans" class="form-input" disabled >
+                  <label class="form-label">Currency</label>
+              </div> 
               </form>
+              <div class="btn-currency-container">
+                <button class="btn-convert" id="btn-convert">Convert</button>
+              </div>
+            </div>
           </div>
+
+           <!-- OPERATION: LOAN -->
+           <div class="boxes operation-loan">
+            <h2 class="boxes-title">Request loan</h2>
+            <form class="form form-loan">
+                <div>
+                    <input type="number" class="form-input form-input-loan-amount" />
+                    <label class="form-label form-label-loan">Amount</label>
+                </div>
+                <div>
+                  <button id="btn-loan" class="btn-form form-btn-loan">&rarr;</button>
+                </div>
+            </form>
+        </div>
 
           <!-- Contact us  -->
-          <div class="operation operation-close">
-              <h2 class="title-2">Any questions? Contact us!</h2>
+          <div class="contact-us boxes">
+              <h2 class="boxes-title">Any questions? Contact us!</h2>
+            <div class="contact-us-container">
               <form class="form form-message">
-                  <div>
-                      <input type="text" class="form-input form-input-message" />
-                      <label class="form-label">Enter message</label>
-                  </div>
-                  <div>
-                      <input type="email"class="form-input form-input-email"/>
-                      <label class="form-label">Enter email</label>
-                  </div>
-                  <div> <button id="message-btn"class="btn-form">&rarr;</button></div>
+                <div>
+                    <input type="text" class="form-input form-input-message" />
+                    <label class="form-label">Enter message</label>
+                </div>
+                <div>
+                    <input type="email"class="form-input form-input-email"/>
+                    <label class="form-label">Enter email</label>
+                </div>
+                <div>
+                  <button id="btn-message"class="btn-form">&rarr;</button>
+                </div>
               </form>
           </div>
       </section>
@@ -280,6 +299,7 @@
                   </ul>
               </div>
           </div>
+
           <!--Add new conatct-->
           <div id="new-contact">
               <h2 class="title-2">New contact</h2>
@@ -290,13 +310,17 @@
           </div>
 
           <div id="close-account">
-              <button class="btn-close-account">Close account</button>
+              <button class="btn-sign-out">Sign out</button>
           </div>
       </section>
     
     </div>
+
   </main>
-    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/timer.js"></script>
+    <script src="./assets/js/curr.js"></script> .
   </body>
 </html>
 >>>>>>> fe3156f79ea3e037761735d6989127d1a1b2f33d
