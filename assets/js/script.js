@@ -60,21 +60,33 @@ errorMessage.innerHTML = "Input Required";
 return false;
 
 } 
-console.log( storageString)
+console.log(storageString)
 if (storageString != null) {
   for (i = 0; i < storageString.length; i++ ){
       if (storageString[i] === txtVal){
         errorMessage.innerHTML = "This Information Already Exists";
         return false;
       }
-  }
+  } 
+  
+}
+if (storageString === null) {
+  btnNode.appendChild(txtNode);
+  buttonNode.appendChild(btnNode);
+  saveAll()
   location.reload();
+}  else if (storageString.length < 20) {
+  btnNode.appendChild(txtNode);
+  buttonNode.appendChild(btnNode);
+  saveAll()
+  location.reload();
+} else  {
+  errorMessage.innerHTML = "You Have Reach Contact Limit";
+  return false;
 }
 
-btnNode.appendChild(txtNode);
-buttonNode.appendChild(btnNode);
 
-saveAll()
+
 }
 
 /* Save */
@@ -123,16 +135,6 @@ function loadAll() {
 
 }
 
-function move(arr, old_index, new_index) {
-  if (new_index >= arr.length) {
-      var k = new_index - arr.length + 1;
-      while (k--) {
-          arr.push(undefined);
-      }
-  }
-  arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
-  return arr
-};
 searchUser = document.getElementById("search-user-btn").addEventListener("click", searchContact);
 searchError = document.getElementById("search-error-message")
 function searchContact() {
@@ -145,10 +147,17 @@ function searchContact() {
   counter = 0;
   for (i = 0; i < storageString.length; i++ ){
       if (storageString[i] === searchValue) {
-        alert("add functionality")
-        location.reload();
+        searchError.innerHTML = "Contact is one line " + ( i + 1 )
+        
+        console.log(document.querySelectorAll("li")[i].classList.add("colour"))
+        console.log(document.querySelectorAll("li")[i].classList)
+        
+      } else {
+        console.log(document.querySelectorAll("li")[i].classList.remove("colour"))
+        counter ++;
       }
-  } searchError.innerHTML = "This Information Does Not Exist";
+  } if (counter === storageString.length)
+    searchError.innerHTML = "This Information Does Not Exist"
   
   }
 
