@@ -5,7 +5,7 @@
 }
   
   html {
-    font-size: 60%;
+    font-size: 55%;
   }
   
   /*General styles*/
@@ -50,7 +50,7 @@
   }
 
   .btn-convert{
-    padding: 6px 4px;
+    padding: 4px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -60,11 +60,6 @@
   .btn-convert:focus {
     outline: none;
     background-color: rgba(255, 255, 255, 0.8);
-  }
-
-  #btn-message{
-    width: 50%;
-    margin: 0 auto;
   }
 
   .btn-contacts {
@@ -81,7 +76,7 @@
     background-color: RoyalBlue;
   }
 
-  .btn-close-account{
+  .btn-sign-out{
     background-color: rgb(2, 57, 112); 
     border: none; 
     color: white; 
@@ -92,13 +87,20 @@
     transition: all 0.5s;
   }
   
-  .btn-close-account:hover{
+  .btn-sign-out:hover{
     background-color: #3f66d3;
   }
 
   .title-2 {
     margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #333;
     text-align: center;
+  }
+
+  .boxes-title{
+    margin-bottom: 1.5rem;
     font-size: 1.7rem;
     font-weight: 600;
     color: #333;
@@ -136,7 +138,8 @@ nav {
   
   /* Main */
 .app{
-  margin: 2rem
+  margin: 2rem;
+ 
 }
   
 .wrapper {
@@ -147,7 +150,6 @@ nav {
     grid-template-columns: 3fr 1.5fr 1fr;
     grid-template-rows: auto repeat(3, 18rem) auto;
     gap: 2rem;
-    overflow: hidden;
     border-radius: 2rem;
     transition: all 1s;
   }
@@ -190,7 +192,7 @@ nav {
     grid-row: 2 / span 3;
     background-color: #fff;
     border-radius: 1rem;
-    /*overflow: scroll;*/
+    overflow: scroll;
     box-shadow: 0px 1px 2px rgba(0,0,0,0.1), 
             0px 2px 4px rgba(0,0,0,0.1), 
             0px 4px 8px rgba(0,0,0,0.1), 
@@ -265,72 +267,50 @@ nav {
   
   /* Operations  Column 02 */
 
-  #column-2{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
+#column-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
-  .operation {
-    border-radius: 1rem;
-    padding: 3rem 4rem;
-    color: #333;
-  }
+.boxes {
+  border-radius: 1rem;
+  padding: 3rem 4rem;
+  width: 400px;
+  color: #333;
+  background-image: linear-gradient(to top left, #3867e7, #a2befa);
+  margin-top: 15px;
+}
 
-  .operation-transfer {
-    background-image: linear-gradient(to top left, #3867e7, #a2befa);
-    
-  }
-  
-  .operation-loan {
-    background-image: linear-gradient(to top left, #3867e7, #a2befa);
-  }
-  
-  .operation-close {
-    background-image: linear-gradient(to top left, #3867e7, #a2befa);
-  }
-  
-  
-  .form {
+.form {
     display: grid;
     gap: 0.4rem 1rem;
     text-align: center;
-  }
-  
+}
+/*Loan*/
 .form-loan {
-    grid-template-columns: 1fr;
-    width: 50%;
-    margin: 0 auto;
+    grid-template-columns: 1fr 0.5fr 1fr;
 }
 
 
  
  
   /*Transfer styles*/
-
-.operation-transfer h2{
-  text-align: center;
-}
-
-.transfer-to{
-  width: 50%;
-  margin: 0 auto;
-}
-
-.transfer-options{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
 .form-transfer{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 0.5fr;
 }
 
 /*curreny styles*/
+.currency-options{
+  text-align: center;
+}
 
-.transfer-options select{
+.currency-options{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.currency-options select{
   width: 95%;
   height: 20px;
   font-size: 1.2em;
@@ -345,7 +325,7 @@ nav {
 }
 
 
-.transfer-options input{
+.currency-options input{
   width: 95%;
   height: 20px;
   font-size: 1em;
@@ -356,6 +336,11 @@ nav {
   padding: 0 1em;
 }
 
+.btn-currency-container{
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
 .form-input {
     width: 100%;
     border: none;
@@ -379,7 +364,18 @@ nav {
   font-size: 1.3rem;
   text-align: center;
 }
-  
+/*Contact us*/
+.form-message{
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
+}
+
+.form-message input{
+  font-size: 9px;
+}
+
+
+
   /*Contacts Column 03*/
 #column-3{
   padding-top: 32px;
@@ -449,11 +445,6 @@ nav {
   margin-top: 3rem;
 }
 
-.close-page{
-  display:flex;
-  flex-direction: column;
-  padding: 0.5rem;
-}
 
 
 

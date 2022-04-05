@@ -19,17 +19,16 @@ function display(data) {
 
 document.querySelector('.app').addEventListener('click',
     function(event) {
+
+      event.preventDefault()
         if (event.target.getAttribute('id') === 'btn-convert'){
             let currency1 = select[0].value;
             let currency2 = select[1].value;
             let value = num.value;
           
             if (currency1 != currency2) {
-              convert(currency1, currency2, value);
-              alert("Value was converted")
-            } else {
-              alert("Choose Different Currencies !!!");
-            }
+              convert(currency1, currency2, value);             
+            } 
     }}
 );
 
@@ -44,6 +43,9 @@ function convert(currency1, currency2, value) {
       ans.value = Object.values(val.rates)[0];
     });
 }
+
+
+
 
 
 
