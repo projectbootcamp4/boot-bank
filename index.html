@@ -136,16 +136,17 @@
 
               <div id="search-contact">
                   <h2 class="title-2">Search contact</h2>
+                  <div id="search-error-message"></div>
                   <form class="search-form">
-                      <input type="search"  id="search-username" class="input-contact" placeholder="enter username">
-                      <button type="submit" id="search-user-btn" class="btn-contacts"><i class="fa-solid fa-magnifying-glass" ></i></button>
+                      <input type="text"  id="search-username" class="input-contact" placeholder="enter username">
+                      <button type="button" id="search-user-btn" class="btn-contacts"><i class="fa-solid fa-magnifying-glass" ></i></button>
                   </form>
               </div>
 
-              <div id="contacts-list">
+              <div id="contacts-list" class="overflow-auto">
                   <h3>List of contacts</h3>
-                  <ul>
-
+                  <ul id="list">
+                        
                   </ul>
               </div>
           </div>
@@ -154,8 +155,9 @@
               <h2 class="title-2">New contact</h2>
               <form  class="search-form">
                   <input type="search"  id="new-username" class="input-contact" placeholder="enter username" >
-                  <button type="submit" id="store-user-btn" class="btn-contacts">Add</button>
+                  <button type="button" id="store-user-btn" class="btn-contacts">Add</button>
               </form>
+              <div id="error-message"></div>
           </div>
 
           <div id="close-account">
