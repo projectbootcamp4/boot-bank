@@ -3,6 +3,8 @@ var acctBalanceLbl = document.getElementById("acctBalanceLbl");
 var deposits = [];
 var withdrawals = [];
 var totalBalance = 10000;
+var totalDepositAmount=0;
+var totalWithdrawalAmount=0;
 
 var userDeposit = document.getElementById("userDeposit");
 var btnDeposit = document.getElementById("loan-btn");
@@ -15,7 +17,8 @@ var userWithdraw = document.getElementById("userWithdraw");
  var date = document.getElementById("date");
  var deposit_date = document.getElementById("deposit_date");
  var withdrawal_date = document.getElementById("withdrawal_date");
- //var depositListEl = $('#deposit-list');
+ var totalDeposit = document.getElementById("totalDeposit");
+ var totalWithdrawal = document.getElementById("totalWithdrawal");
 
  var currentDate = new Date().toLocaleDateString();
  date.innerText = currentDate;
@@ -51,6 +54,10 @@ btnDeposit.addEventListener('click', function()  {
         document.getElementById("acctBalanceLbl").innerText = totalBalanceFormatted;
         depositAmount.innerText = deposits;
         deposit_date.innerText = currentDate;
+
+       // Display total deposit amount
+       totalDepositAmount += (Number(userDeposit.value));
+       totalDeposit.innerText = totalDepositAmount;
         
     // print deposit to console to verify success
     console.log("$" + userDeposit.value);
@@ -86,6 +93,10 @@ btnWithdraw.addEventListener('click', function() {
         document.getElementById("acctBalanceLbl").innerHTML = totalBalanceFormatted;
         withdrawalAmount.innerText = withdrawals;
         withdrawal_date.innerText = currentDate;
+
+        // Display total deposit amount
+       totalWithdrawalAmount += (Number(userWithdraw.value));
+       totalWithdrawal.innerText = totalWithdrawalAmount;
 
         // print withdrawal to console to verfify success
     console.log("$" + userWithdraw.value);
