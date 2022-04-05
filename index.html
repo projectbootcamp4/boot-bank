@@ -48,13 +48,14 @@
           <!--Deposit-->
           <div class="transactions-row">
             <div class="transactions-type transactions-deposit">deposit</div>
-            <div class="transactions-date"><span id="date"></span></div>
+            <div class="transactions-date"><span id="deposit_date"></span></div>
             <div class="transactions-value">$<span id="depositAmount">00</span></div>
+            <ul id="deposit-list"></ul>
           </div>
           <!--Withdrawal-->
           <div class="transactions-row">
             <div class="transactions-type transactions-withdrawal">withdrawal</div>
-            <div class="transactions-date"><span id="date"></span></div>
+            <div class="transactions-date"><span id="withdrawal_date"></span></div>
             <div class="transactions-value">$<span id="withdrawalAmount">00</span></div>
           </div>
 
@@ -94,7 +95,7 @@
               <label class="form-label">Convert</label>
               </div>
               <div>
-              <button id="transfer-btn"class="btn-form btn-transfer">&rarr;</button>
+              <button type="button" id="transfer-btn"class="btn-form btn-transfer">&rarr;</button>
               <span id="withdrawalerror"></span>
               </div>
               </form>
@@ -109,7 +110,7 @@
                       <label class="form-label form-label-loan">Amount</label>
                   </div>
                   <div>
-                      <button id="loan-btn" class="btn-form form-btn-loan">&rarr;</button>
+                      <button type="button" id="loan-btn" class="btn-form form-btn-loan">&rarr;</button>
                   </div>
                   <span id="depositerror"></span>
               </form>

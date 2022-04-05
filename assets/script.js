@@ -13,9 +13,12 @@ var userWithdraw = document.getElementById("userWithdraw");
  var depositAmount = document.getElementById("depositAmount");
  var withdrawalAmount = document.getElementById("withdrawalAmount");
  var date = document.getElementById("date");
+ var deposit_date = document.getElementById("deposit_date");
+ var withdrawal_date = document.getElementById("withdrawal_date");
+ //var depositListEl = $('#deposit-list');
 
  var currentDate = new Date().toLocaleDateString();
-
+ date.innerText = currentDate;
 // Create our number formatter.
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -47,7 +50,7 @@ btnDeposit.addEventListener('click', function()  {
         var totalBalanceFormatted = formatter.format(totalBalance);
         document.getElementById("acctBalanceLbl").innerText = totalBalanceFormatted;
         depositAmount.innerText = deposits;
-        date.innerText = currentDate;
+        deposit_date.innerText = currentDate;
         
     // print deposit to console to verify success
     console.log("$" + userDeposit.value);
@@ -58,10 +61,14 @@ btnDeposit.addEventListener('click', function()  {
 
 // accept withdrawals from user, store withdrawals in array
 btnWithdraw.addEventListener('click', function() {
-
     
+        if(userWithdraw.value === "")
+        {
+            withdrawalError.textContent = "Please enter the value";
+            withdrawalError.style.color = "red";
+        }
         // checks if withdrawal meets parameters
-        if (userWithdraw.value > totalBalance - 100) {
+        else if (userWithdraw.value > totalBalance - 100) {
            // alert("Your total balance cannot drop below $100.");
            withdrawalError.textContent = "Your total balance cannot drop below $100.";
            withdrawalError.style.color = "red";
@@ -78,7 +85,7 @@ btnWithdraw.addEventListener('click', function() {
         var totalBalanceFormatted = formatter.format(totalBalance);
         document.getElementById("acctBalanceLbl").innerHTML = totalBalanceFormatted;
         withdrawalAmount.innerText = withdrawals;
-        date.innerText = currentDate;
+        withdrawal_date.innerText = currentDate;
 
         // print withdrawal to console to verfify success
     console.log("$" + userWithdraw.value);
