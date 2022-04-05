@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <link rel="shortcut icon" type="image/png" href="/icon.png" /> -->
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Bootbank</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Arvo&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./assets/images/Bootbank-logo.jpeg">
-    <script src="https://kit.fontawesome.com/2d9e8320eb.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/2d9e8320eb.js" crossorigin="anonymous"></script> -->
     
   </head>
   <body>
@@ -49,7 +49,7 @@
           <div class="transactions-row">
             <div class="transactions-type transactions-deposit">deposit</div>
             <div class="transactions-date">00.00.00</div>
-            <div class="transactions-value">0</div>
+            <div class="transactions-value">$<span id="depositAmount">00</span></div>
           </div>
           <!--Withdrawal-->
           <div class="transactions-row">
@@ -85,7 +85,7 @@
               </div>
 
               <div>
-                  <input type="number" class="form-input form-input-amount" />
+                  <input type="number" class="form-input form-input-amount" id="userWithdraw" />
                   <label class="form-label">Amount</label>
               </div>
 
@@ -95,6 +95,7 @@
               </div>
               <div>
               <button id="transfer-btn"class="btn-form btn-transfer">&rarr;</button>
+              <span id="withdrawalerror"></span>
               </div>
               </form>
           </div>
@@ -104,12 +105,13 @@
               <h2 class="title-2">Request loan</h2>
               <form class="form form-loan">
                   <div>
-                      <input type="number" class="form-input form-input-loan-amount" />
+                      <input type="number" class="form-input form-input-loan-amount" id="userDeposit"/>
                       <label class="form-label form-label-loan">Amount</label>
                   </div>
                   <div>
                       <button id="loan-btn" class="btn-form form-btn-loan">&rarr;</button>
                   </div>
+                  <span id="depositerror"></span>
               </form>
           </div>
 
@@ -165,6 +167,6 @@
     
     </div>
   </main>
-  <script src="/assets/script.js"></script>
+  <script src="./assets/script.js"></script>
   </body>
 </html>
