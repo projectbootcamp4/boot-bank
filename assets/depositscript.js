@@ -1,4 +1,4 @@
-// Global variable
+// Global variables
 var acctBalanceLbl = document.getElementById("acctBalanceLbl");
 var deposits = [];
 var withdrawals = [];
@@ -21,7 +21,6 @@ var userWithdraw = document.getElementById("userWithdraw");
  var totalWithdrawal = document.getElementById("totalWithdrawal");
 
  var currentDate = new Date().toLocaleDateString();
- date.innerText = currentDate;
 // Create our number formatter.
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',

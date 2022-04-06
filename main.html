@@ -1,34 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="/icon.png" />
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Bootbank</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Arvo&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./assets/images/Bootbank-logo.jpeg">
     <script src="https://kit.fontawesome.com/2d9e8320eb.js" crossorigin="anonymous"></script>
-    
   </head>
-  <body>
+  <body>  
     <!-- Navbar -->
     <nav>
-      <p class="welcome">Welcome, <span class="welcome-user"></span></p>
+      <p class="welcome">Welcome! <span class="welcome-user"></span></p>
       <!--<img src="./assets/images/Bootbank-logo.jpeg" alt="Logo" class="logo" /> -->
       <h1 class="logo">BB</h1>
 
        <!-- logout timer -->
        <p class="logout-timer">
-        You will be logged out in <span class="timer">10:00</span>
+        You will be logged out in <span id="countdown"></span>
       </p>
     </nav>
 
     <!--Main page-->
   <main class="app">
+      
     <div class="wrapper">
         <!-- Column 01 - Balance, Transactions and Summary-->
       <section id="column-1">
@@ -39,7 +37,6 @@
               As of <span id="date"></span>
             </p>
           </div>
-          <!-- <p class="balance-value">1000 CAD</p> -->
           <label class="balance-value" id="acctBalanceLbl"></label>
         </div>
 
@@ -72,98 +69,125 @@
       <!--Column 02 operations and contact us-->
       <section id="column-2">
         <!-- OPERATION: TRANSFERS - -->
-          <div class="operation operation-transfer">
-              <h2 class="title-2">Transfer money</h2>
+          <div class="operation operation-transfer boxes">
+              <h2 class="boxes-title">Transfer money</h2>
               <form class="form form-transfer">
-
-              <div>
+               <!--Enter username-->
+              <div class="transfer-to">
                   <input type="text" class="form-input form-input-to">
                   <label class="form-label">Transfer to</label>
               </div>
-
               <div>
                   <input type="number" class="form-input form-input-amount" id="userWithdraw" />
                   <label class="form-label">Amount</label>
               </div>
-
               <div>
-              <input type="number" class="form-input form-input-convert" />
-              <label class="form-label">Convert</label>
-              </div>
-              <div>
-              <button type="button" id="transfer-btn"class="btn-form btn-transfer">&rarr;</button>
-              <span id="withdrawalerror"></span>
+                <button type="button" id="transfer-btn" class="btn-form btn-transfer">&rarr;</button>
+                  <span id="withdrawalerror"></span>
               </div>
               </form>
           </div>
-
-          <!-- OPERATION: LOAN -->
-          <div class="operation operation-loan">
-              <h2 class="title-2">Request loan</h2>
-              <form class="form form-loan">
-                  <div>
-                      <input type="number" class="form-input form-input-loan-amount" id="userDeposit"/>
-                      <label class="form-label form-label-loan">Amount</label>
-                  </div>
-                  <div>
-                      <button type="button" id="loan-btn" class="btn-form form-btn-loan">&rarr;</button>
-                  </div>
-                  <span id="depositerror"></span>
+         <!--Currency Converter-->
+          <div class="boxes">
+            <div class="currency-box">
+              <h2 class="boxes-title"> Currency Converter</h2>
+              <form class="currency-options">
+                <div class="left_box">
+                  <select name="currency" class="currency"></select>
+                  <input type="number" name="" id="num" class="form-input">
+                  <label class="form-label">Amount</label>
+              </div>
+              <div class="right_box">
+                  <select name="currency" class="currency"></select>
+                  <input type="text" name="" id="ans" class="form-input" disabled >
+                  <label class="form-label">Currency</label>
+              </div> 
               </form>
+              <div class="btn-currency-container">
+                <button class="btn-convert" id="btn-convert">Convert</button>
+              </div>
+            </div>
           </div>
+
+           <!-- OPERATION: LOAN -->
+           <div class="boxes operation-loan">
+            <h2 class="boxes-title">Request loan</h2>
+            <form class="form form-loan">
+                <div>
+                    <input type="number" class="form-input form-input-loan-amount" id="userDeposit" />
+                    <label class="form-label form-label-loan">Amount</label>
+                </div>
+                <div>
+                  <button type="button" id="loan-btn" class="btn-form form-btn-loan">&rarr;</button>
+                </div>
+                <span id="depositerror"></span>
+            </form>
+        </div>
 
           <!-- Contact us  -->
           <div class="operation operation-close">
-              <h2 class="title-2">Any questions? Contact us!</h2>
-              <form class="form form-message">
-                  <div>
-                      <input type="text" class="form-input form-input-message" />
-                      <label class="form-label">Enter message</label>
-                  </div>
-                  <div>
-                      <input type="email"class="form-input form-input-email"/>
-                      <label class="form-label">Enter email</label>
-                  </div>
-                  <div> <button id="message-btn"class="btn-form">&rarr;</button></div>
-              </form>
-          </div>
+            <h2 class="title-2">Any questions? Contact us!</h2>
+            <form class="form form-message">
+                <div>
+                    <input type="text" class="form-input form-input-message" id="bot-message"/>
+                    <label class="form-label">Enter message</label>
+                </div>
+                <div>
+                    <input type="email"class="form-input form-input-email" id="bot-email"/>
+                    <label class="form-label">Enter email</label>
+                    
+                </div>
+                <div> <button type="button" id="bot-btn"class="btn-form">&rarr;</button></div>
+                <div id="bot-status" style="font-size:20px"></div>
+            </form>
+        </div>
       </section>
     
           <!--Column 03 Contact list-->
       <section id="column-3">
-          <div id="contacts" class="contacts">
+        <div id="contacts" class="contacts">
 
-              <div id="search-contact">
-                  <h2 class="title-2">Search contact</h2>
-                  <form class="search-form">
-                      <input type="search"  id="search-username" class="input-contact" placeholder="enter username">
-                      <button type="submit" id="search-user-btn" class="btn-contacts"><i class="fa-solid fa-magnifying-glass"></i></button>
-                  </form>
-              </div>
+            <div id="search-contact">
+                <h2 class="title-2">Search contact</h2>
+                <div id="search-error-message"></div>
+                <form class="search-form">
+                    <input type="text"  id="search-username" class="input-contact" placeholder="enter username">
+                    <button type="button" id="search-user-btn" class="btn-contacts"><i class="fa-solid fa-magnifying-glass" ></i></button>
+                </form>
+            </div>
 
-              <div id="contacts-list">
-                  <h3>List of contacts</h3>
-                  <ul>
-
-                  </ul>
-              </div>
-          </div>
-          <!--Add new conatct-->
-          <div id="new-contact">
-              <h2 class="title-2">New contact</h2>
-              <form  class="search-form">
-                  <input type="search"  id="new-username" class="input-contact" placeholder="enter username">
-                  <button type="submit" id="store-user-btn" class="btn-contacts">Add</button>
-              </form>
-          </div>
-
-          <div id="close-account">
-              <button class="btn-close-account">Close account</button>
+            <div id="contacts-list" class="overflow-auto">
+                <h3>List of contacts</h3>
+                <ul id="list">
+                      
+                </ul>
+            </div>
+        </div>
+        <!--Add new conatct-->
+        <div id="new-contact">
+            <h2 class="title-2">New contact</h2>
+            <form  class="search-form">
+                <input type="search"  id="new-username" class="input-contact" placeholder="enter username" >
+                <button type="button" id="store-user-btn" class="btn-contacts">Add</button>
+            </form>
+            <div id="error-message"></div>
+        </div>
+        
+    <div id="close-account">
+      
+      <input type="button" onclick="location.href='https://projectbootcamp4.github.io/boot-bank';" value="Sign Out" />
           </div>
       </section>
     
     </div>
+
   </main>
-  <script src="./assets/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+     <script src="./assets/depositscript.js"></script>
+     <script src="./assets/js/timer.js"></script>
+    <script src="./assets/js/curr.js"></script> 
+    <script src="./assets/js/script.js"></script>
+    
   </body>
 </html>
