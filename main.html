@@ -34,10 +34,10 @@
           <div>
             <p class="balance-label">Current balance</p>
             <p class="balance-date">
-              As of <span class="currentDate"></span>
+              As of <span id="date"></span>
             </p>
           </div>
-          <p class="balance-value">1000 CAD</p>
+          <label class="balance-value" id="acctBalanceLbl"></label>
         </div>
 
         <!-- Transactions -->
@@ -45,14 +45,14 @@
           <!--Deposit-->
           <div class="transactions-row">
             <div class="transactions-type transactions-deposit">deposit</div>
-            <div class="transactions-date">00.00.00</div>
-            <div class="transactions-value">0</div>
+            <div class="transactions-date"><span id="deposit_date"></span></div>
+            <div class="transactions-value">$<span id="depositAmount">00</span></div>
           </div>
           <!--Withdrawal-->
           <div class="transactions-row">
             <div class="transactions-type transactions-withdrawal">withdrawal</div>
-            <div class="transactions-date">00.00.00</div>
-            <div class="transactions-value">0</div>
+            <div class="transactions-date"><span id="withdrawal_date"></span></div>
+            <div class="transactions-value">$<span id="withdrawalAmount">00</span></div>
           </div>
 
         </div>
@@ -60,12 +60,9 @@
         <!-- Summary -->
         <div class="summary">
           <p class="summary-label">In</p>
-          <p class="summary-value summary-value-in">0000 CAD</p>
+          <p class="summary-value summary-value-in">$<span id="totalDeposit">00</span></p>
           <p class="summary-label">Out</p>
-          <p class="summary-value summary-value-out">0000 CAD</p>
-          <!--<p class="summary-label">Interest</p>
-          <p class="summary-value summary-value-interest">0000 CAD</p> 
-          <button class="btn-sort">&downarrow; SORT</button> -->
+          <p class="summary-value summary-value-out">$<span id="totalWithdrawal">00</p>
         </div>
       </section>
 
@@ -81,11 +78,12 @@
                   <label class="form-label">Transfer to</label>
               </div>
               <div>
-                  <input type="number"  class="form-input form-input-amount">
+                  <input type="number"  class="form-input form-input-amount" id="userWithdraw">
                   <label class="form-label">Amount</label>
               </div>
               <div>
                 <button id="btn-transfer"class="btn-form btn-transfer">&rarr;</button>
+                  <span id="withdrawalerror"></span>
               </div>
               </form>
           </div>
@@ -116,12 +114,13 @@
             <h2 class="boxes-title">Request loan</h2>
             <form class="form form-loan">
                 <div>
-                    <input type="number" class="form-input form-input-loan-amount" />
+                    <input type="number" class="form-input form-input-loan-amount" id="userDeposit" />
                     <label class="form-label form-label-loan">Amount</label>
                 </div>
                 <div>
                   <button id="btn-loan" class="btn-form form-btn-loan">&rarr;</button>
                 </div>
+                <span id="depositerror"></span>
             </form>
         </div>
 
