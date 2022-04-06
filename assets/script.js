@@ -1,4 +1,4 @@
-// Global variable
+// Global variables
 var acctBalanceLbl = document.getElementById("acctBalanceLbl");
 var deposits = [];
 var withdrawals = [];
