@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Bootbank</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Arvo&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./assets/images/Bootbank-logo.jpeg">
+    <script src="https://kit.fontawesome.com/2d9e8320eb.js" crossorigin="anonymous"></script>
+    
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <p class="welcome">Welcome, <span class="welcome-user"></span></p>
+      <!--<img src="./assets/images/Bootbank-logo.jpeg" alt="Logo" class="logo" /> -->
+      <h1 class="logo">BB</h1>
+
+       <!-- logout timer -->
+       <p class="logout-timer">
+        You will be logged out in <span class="timer">10:00</span>
+      </p>
+    </nav>
+
+    <!--Main page-->
+  <main class="app">
+    <div class="wrapper">
+        <!-- Column 01 - Balance, Transactions and Summary-->
+      <section id="column-1">
+        <div class="balance">
+          <div>
+            <p class="balance-label">Current balance</p>
+            <p class="balance-date">
+              As of <span id="date"></span>
+            </p>
+          </div>
+          <!-- <p class="balance-value">1000 CAD</p> -->
+          <label class="balance-value" id="acctBalanceLbl"></label>
+        </div>
+
+        <!-- Transactions -->
+        <div class="transactions">
+          <!--Deposit-->
+          <div class="transactions-row">
+            <div class="transactions-type transactions-deposit">deposit</div>
+            <div class="transactions-date"><span id="deposit_date"></span></div>
+            <div class="transactions-value">$<span id="depositAmount">00</span></div>
+          </div>
+          <!--Withdrawal-->
+          <div class="transactions-row">
+            <div class="transactions-type transactions-withdrawal">withdrawal</div>
+            <div class="transactions-date"><span id="withdrawal_date"></span></div>
+            <div class="transactions-value">$<span id="withdrawalAmount">00</span></div>
+          </div>
+
+        </div>
+
+        <!-- Summary -->
+        <div class="summary">
+          <p class="summary-label">In</p>
+          <p class="summary-value summary-value-in">$<span id="totalDeposit">00</span></p>
+          <p class="summary-label">Out</p>
+          <p class="summary-value summary-value-out">$<span id="totalWithdrawal">00</p>
+        </div>
+      </section>
+
+      <!--Column 02 operations and contact us-->
+      <section id="column-2">
+        <!-- OPERATION: TRANSFERS - -->
+          <div class="operation operation-transfer">
+              <h2 class="title-2">Transfer money</h2>
+              <form class="form form-transfer">
+
+              <div>
+                  <input type="text" class="form-input form-input-to">
+                  <label class="form-label">Transfer to</label>
+              </div>
+
+              <div>
+                  <input type="number" class="form-input form-input-amount" id="userWithdraw" />
+                  <label class="form-label">Amount</label>
+              </div>
+
+              <div>
+              <input type="number" class="form-input form-input-convert" />
+              <label class="form-label">Convert</label>
+              </div>
+              <div>
+              <button type="button" id="transfer-btn"class="btn-form btn-transfer">&rarr;</button>
+              <span id="withdrawalerror"></span>
+              </div>
+              </form>
+          </div>
+
+          <!-- OPERATION: LOAN -->
+          <div class="operation operation-loan">
+              <h2 class="title-2">Request loan</h2>
+              <form class="form form-loan">
+                  <div>
+                      <input type="number" class="form-input form-input-loan-amount" id="userDeposit"/>
+                      <label class="form-label form-label-loan">Amount</label>
+                  </div>
+                  <div>
+                      <button type="button" id="loan-btn" class="btn-form form-btn-loan">&rarr;</button>
+                  </div>
+                  <span id="depositerror"></span>
+              </form>
+          </div>
+
+          <!-- Contact us  -->
+          <div class="operation operation-close">
+              <h2 class="title-2">Any questions? Contact us!</h2>
+              <form class="form form-message">
+                  <div>
+                      <input type="text" class="form-input form-input-message" />
+                      <label class="form-label">Enter message</label>
+                  </div>
+                  <div>
+                      <input type="email"class="form-input form-input-email"/>
+                      <label class="form-label">Enter email</label>
+                  </div>
+                  <div> <button id="message-btn"class="btn-form">&rarr;</button></div>
+              </form>
+          </div>
+      </section>
+    
+          <!--Column 03 Contact list-->
+      <section id="column-3">
+          <div id="contacts" class="contacts">
+
+              <div id="search-contact">
+                  <h2 class="title-2">Search contact</h2>
+                  <form class="search-form">
+                      <input type="search"  id="search-username" class="input-contact" placeholder="enter username">
+                      <button type="submit" id="search-user-btn" class="btn-contacts"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </form>
+              </div>
+
+              <div id="contacts-list">
+                  <h3>List of contacts</h3>
+                  <ul>
+
+                  </ul>
+              </div>
+          </div>
+          <!--Add new conatct-->
+          <div id="new-contact">
+              <h2 class="title-2">New contact</h2>
+              <form  class="search-form">
+                  <input type="search"  id="new-username" class="input-contact" placeholder="enter username">
+                  <button type="submit" id="store-user-btn" class="btn-contacts">Add</button>
+              </form>
+          </div>
+
+          <div id="close-account">
+              <button class="btn-close-account">Close account</button>
+          </div>
+      </section>
+    
+    </div>
+  </main>
+  <script src="./assets/script.js"></script>
+  </body>
+</html>
