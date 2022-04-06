@@ -445,8 +445,14 @@ nav {
   margin-top: 3rem;
 }
 
+.close-page{
+  display:flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
 
-
-
-
-
+  /* For Search Colour */
+.colour {
+  color: #3867e7;
+  text-decoration: underline;
+}
