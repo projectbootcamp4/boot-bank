@@ -1,9 +1,12 @@
+
 <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="/icon.png" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
     <title>Bootbank</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +18,7 @@
     <!-- Navbar -->
     <nav>
       <p class="welcome">Welcome! <span class="welcome-user"></span></p>
+
       <!--<img src="./assets/images/Bootbank-logo.jpeg" alt="Logo" class="logo" /> -->
       <h1 class="logo">BB</h1>
 
@@ -26,8 +30,9 @@
 
     <!--Main page-->
   <main class="app">
-      
-    <div class="wrapper">
+    
+    <div class="flex flex-row flex-wrap justify-evenly">
+      <div class="flex justify-evenly w-full xl:w-1/3">
         <!-- Column 01 - Balance, Transactions and Summary-->
       <section id="column-1">
         <div class="balance">
@@ -47,6 +52,7 @@
             <div class="transactions-type transactions-deposit">deposit</div>
             <div class="transactions-date"><span id="deposit_date"></span></div>
             <div class="transactions-value">$<span id="depositAmount">00</span></div>
+
           </div>
           <!--Withdrawal-->
           <div class="transactions-row">
@@ -60,16 +66,22 @@
         <!-- Summary -->
         <div class="summary">
           <p class="summary-label">In</p>
+
           <p class="summary-value summary-value-in">$<span id="totalDeposit">00</span></p>
           <p class="summary-label">Out</p>
           <p class="summary-value summary-value-out">$<span id="totalWithdrawal">00</p>
         </div>
       </section>
+      </div>
 
       <!--Column 02 operations and contact us-->
+
+
+      <!--Column 02 operations and contact us-->
+      <div class="flex justify-evenly w-full xl:w-1/3">
       <section id="column-2">
         <!-- OPERATION: TRANSFERS - -->
-          <div class="operation operation-transfer boxes">
+          <div class="boxes operation-transfer boxes">
               <h2 class="boxes-title">Transfer money</h2>
               <form class="form form-transfer">
                <!--Enter username-->
@@ -125,7 +137,7 @@
         </div>
 
           <!-- Contact us  -->
-          <div class="operation operation-close">
+          <div class="boxes operation-close">
             <h2 class="title-2">Any questions? Contact us!</h2>
             <form class="form form-message">
                 <div>
@@ -142,8 +154,10 @@
             </form>
         </div>
       </section>
+      </div>
     
           <!--Column 03 Contact list-->
+          <div class="flex justify-evenly w-full xl:w-1/3">
       <section id="column-3">
         <div id="contacts" class="contacts">
 
@@ -178,7 +192,7 @@
       <input type="button" onclick="location.href='https://projectbootcamp4.github.io/boot-bank';" value="Sign Out" />
           </div>
       </section>
-    
+      </div>
     </div>
 
   </main>
@@ -191,3 +205,4 @@
     
   </body>
 </html>
+
