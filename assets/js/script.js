@@ -31,7 +31,7 @@ fetch(url)
   console.log(data);
 
 });
-window.location.reload();
+// window.location.reload();
 };
 
 
