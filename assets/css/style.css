@@ -414,6 +414,10 @@ nav {
 }
 
 /*List of contacts*/
+#list {
+  font-size: 15px;
+}
+
 #contacts-list{
   padding-top: 0.5rem;
 }
