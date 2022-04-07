@@ -31,7 +31,8 @@ fetch(url)
   console.log(data);
 
 });
-window.location.reload();
+document.getElementById("bot-email").value = "";
+document.getElementById("bot-message").value = "";
 };
 
 
@@ -74,12 +75,16 @@ if (storageString === null) {
   btnNode.appendChild(txtNode);
   buttonNode.appendChild(btnNode);
   saveAll()
-  location.reload();
+  document.getElementById("new-username").value = "";
+  // location.reload();
+  errorMessage.innerHTML = "";
 }  else if (storageString.length < 14) {
   btnNode.appendChild(txtNode);
   buttonNode.appendChild(btnNode);
   saveAll()
-  location.reload();
+  document.getElementById("new-username").value = "";
+  // location.reload();
+  errorMessage.innerHTML = "";
 } else  {
   errorMessage.innerHTML = "You Have Reach Contact Limit";
   return false;
