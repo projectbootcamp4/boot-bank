@@ -6,6 +6,8 @@
 
 html {
   font-size: 55%;
+  scroll-behavior: smooth;
+  
 }
 
 /*General styles*/
@@ -269,11 +271,11 @@ margin: 2rem;
 
 /* Operations  Column 02 */
 
-/*#column-2{
+#column-2{
 display: flex;
 flex-direction: column;
 justify-content: space-around;
-}*/
+}
 
 .boxes {
 border-radius: 1rem;
@@ -462,6 +464,15 @@ padding: 0.5rem;
 .colour {
 color: #3867e7;
 text-decoration: underline;
+}
+input[type=button] {
+  background-color:#3867e7;
+  cursor: pointer;
+  border: none;
+  color: black;
+  padding: 10px 25px;
+  text-decoration: none;
+  margin: 4px 2px;
 }
 
 .close-page{
