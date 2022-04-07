@@ -15,7 +15,13 @@ function updateCountdown(){
     countdownEl.innerHTML = `${minutes}: ${seconds}`;
     time--;
     time = time < 0 ? 0 : time;
-
+    
+    //User log off automatically when timer goes to 0
+    if (time === 0)
+    {
+        window.location.href='https://projectbootcamp4.github.io/boot-bank/';
+    }
+    
    //signOut() function to sign out when time = 0
 }
 
