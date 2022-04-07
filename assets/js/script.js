@@ -17,8 +17,8 @@ if (valid.test(email) === false || input === "") {
   botStatus.innerHTML = "Invalid Email or Password";
   return false
 
-} else if (input != "" && valid.test(email) === true) {
-  botStatus.innerHTML = "Invalid Email";
+} else {
+  botStatus.innerHTML = "";
 }
 
 
@@ -75,7 +75,7 @@ if (storageString === null) {
   buttonNode.appendChild(btnNode);
   saveAll()
   location.reload();
-}  else if (storageString.length < 20) {
+}  else if (storageString.length < 14) {
   btnNode.appendChild(txtNode);
   buttonNode.appendChild(btnNode);
   saveAll()
